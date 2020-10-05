@@ -23,6 +23,7 @@ div#plan div#poniedzialek, div#wtorek, div#sroda, div#czwartek, div#piatek, div#
 div.lekcja{
     position: absolute;
     border-left: 1px solid black;
+    border-bottom: 1px solid black;
     width: 100%;
 }
 

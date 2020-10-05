@@ -32,7 +32,7 @@ function fillSchedule()
             var godzina1 = lekcja.End.split(":");
             godzina1[0] = parseInt(godzina1[0],10);
             godzina1[1] = parseInt(godzina1[1],10);
-            var padding = (((godzina1[1]/60 + godzina1[0]) - (godzina[1]/60 + godzina[0])) * hourheight) + "px";
+            var padding = ((((godzina1[1]/60 + godzina1[0]) - (godzina[1]/60 + godzina[0])) * hourheight) - 2) + "px";
             lekcjadiv.style.height = padding;
             if(lekcja.Link && lekcja.Link != "")
             {
