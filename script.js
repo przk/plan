@@ -54,6 +54,22 @@ function fillSchedule()
 
 fillSchedule();
 
+function DisplayNotification(lekcja)
+{
+    var text = "Za 3 minuty zaczynają się zajęcia: " + lekcja.Name;
+    var img = 'icon.png';
+    var notification = new Notification('Początek zajęć', { body: text, icon: img })
+    if(lekcja.Link && lekcja.Link != "")
+    {
+        let url = lekcja.Link;
+        notification.onclick = function(event) {
+            event.preventDefault();
+            window.open(url,'_blank');
+        }
+    }
+}
+
+
 function checktime()
 {
     var teraz = new Date();
@@ -70,22 +86,16 @@ function checktime()
             godzina[1] = parseInt(godzina[1],10);
             if(hour == godzina[0])
             {
-                if(minute == godzina[1])
+                if(minute == godzina[1] - 3)
                 {
-                    var text = "Zaczynają się zajęcia: " + lekcja.Name;
-                    var img = 'icon.png';
-                    var notification = new Notification('Początek zajęć', { body: text, icon: img })
-                    if(lekcja.Link && lekcja.Link != "")
-                    {
-                        let url = lekcja.Link;
-                        notification.onclick = function(event) {
-                            event.preventDefault();
-                            window.open(url,'_blank');
-                        }
-                    }/*
-                    let div = document.getElementById(dni[dzientyg]).children[lek];
-                    div.style.background = 'orange';
-                    div.classList.add("NOW");*/
+                    DisplayNotification(lekcja);
+                }
+            }
+            if((godzina[1] < 3) && (hour == godzina[0] - 1))
+            {
+                if(minute == 60 + godzina[1] - 3)
+                {
+                    DisplayNotification(lekcja);
                 }
             }
         }
