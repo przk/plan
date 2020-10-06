@@ -37,7 +37,7 @@ function fillSchedule()
             if(lekcja.Link && lekcja.Link != "")
             {
                 lekcjadiv.onclick = function(){
-                    document.location.href = lekcja.Link;
+                    window.open(lekcja.Link,'_blank');
                 }
                 lekcjadiv.classList.add("clickable");
                 lekcjadiv.title = lekcja.Link;
