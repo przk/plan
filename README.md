@@ -25,7 +25,8 @@ Notify | true | boolean | Prevents displaying a notification on event's start if
 Link | false | string | URL to the class or meeting; clicking on the class opens it if present | 
 
 An example day with one Algorithms lab starting at 11:00 and ending at 13:30 would look as following:
-```[
+```js
+[
   {
     "Name":"Algorithms lab",
     "Start":"11:00",
@@ -33,4 +34,5 @@ An example day with one Algorithms lab starting at 11:00 and ending at 13:30 wou
     "Notify":true,
     "Link":"http://example.com/algorithms-lab"
   }
-]```
+]
+```
