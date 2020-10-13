@@ -29,6 +29,7 @@ function fillSchedule()
             lekcjadiv.style.left = 0;
             lekcjadiv.classList.add("lekcja");
             lekcjadiv.style.background = colors[dzien];
+            if(lekcja.Notify == false) lekcjadiv.style.opacity = "30%";
             var godzina1 = lekcja.End.split(":");
             godzina1[0] = parseInt(godzina1[0],10);
             godzina1[1] = parseInt(godzina1[1],10);
